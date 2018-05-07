@@ -1,0 +1,42 @@
+h1 {
+    text-align: center;
+}
+
+.grid {
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    height: 800px;
+    border-radius: 10px;
+    background-color: lightblue;
+    box-shadow: 10px 5px 5px lightgrey;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.card {
+    border-radius: 5px;
+    width: 180px;
+    height: 180px;
+    background-color: darkblue;
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+.far, .fas {
+    height: 100%;
+    width: 100%;
+    font-size: 120px;
+    line-height: 180px;
+    text-align: center;
+    display: none;
+}
+
+.chosen {
+    display: inline-block;
+}
+
+.wrong {
+    border: 5px red;
+}
