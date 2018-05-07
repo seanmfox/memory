@@ -2,11 +2,24 @@ h1 {
     text-align: center;
 }
 
+.menu-bar {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    padding-right: 10px;
+}
+
 .grid {
     margin-left: auto;
     margin-right: auto;
-    width: 800px;
-    height: 800px;
+    width: 200px;
     border-radius: 10px;
     background-color: lightblue;
     box-shadow: 10px 5px 5px lightgrey;
@@ -17,20 +30,21 @@ h1 {
 
 .card {
     border-radius: 5px;
-    width: 180px;
-    height: 180px;
+    width: 90px;
+    height: 90px;
     background-color: darkblue;
-    margin: 10px;
+    margin: 5px;
     box-sizing: border-box;
 }
 
 .far, .fas {
     height: 100%;
     width: 100%;
-    font-size: 120px;
-    line-height: 180px;
+    font-size: 50px;
+    line-height: 90px;
     text-align: center;
     display: none;
+    color: white;
 }
 
 .chosen {
@@ -38,5 +52,39 @@ h1 {
 }
 
 .wrong {
-    border: 5px red;
+    background-color: red;
+}
+
+.correct {
+    background-color: green;
+}
+
+@media screen and (min-width: 410px) {
+    .grid {
+        width: 400px;
+    }
+    
+    .card {
+        width: 180px;
+        height: 180px;
+        margin: 10px;
+    }
+    
+    .far, .fas {
+        font-size: 120px;
+        line-height: 180px;
+    }
+}
+
+
+@media screen and (min-width: 610px) {
+    .grid {
+        width: 600px;
+    }
+}
+
+@media screen and (min-width: 810px) {
+    .grid {
+        width: 800px;
+    }
 }
