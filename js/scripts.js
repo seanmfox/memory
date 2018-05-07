@@ -3,11 +3,18 @@ let firstChoice = "";
 let secondChoice = "";
 let firstChoiceClasses = "";
 let secondChoiceClasses = "";
-let start = "";
+let start = "00:00:00";
 let incrementTimer = "";
-let shapes = ['<i class="far fa-bell icon"></i>','<i class="fas fa-arrows-alt"></i>','<i class="fas fa-battery-full"></i>','<i class="far fa-calendar"></i>','<i class="fas fa-bicycle"></i>','<i class="fas fa-camera"></i>','<i class="fas fa-clock"></i>','<i class="fas fa-football-ball"></i>','<i class="far fa-bell icon"></i>','<i class="fas fa-arrows-alt"></i>','<i class="fas fa-battery-full"></i>','<i class="far fa-calendar"></i>','<i class="fas fa-bicycle"></i>','<i class="fas fa-camera"></i>','<i class="fas fa-clock"></i>','<i class="fas fa-football-ball"></i>'];
 
 function loadGame() {
+    let shapes = ['<i class="far fa-bell icon"></i>','<i class="fas fa-arrows-alt"></i>','<i class="fas fa-battery-full"></i>','<i class="far fa-calendar"></i>','<i class="fas fa-bicycle"></i>','<i class="fas fa-camera"></i>','<i class="fas fa-clock"></i>','<i class="fas fa-football-ball"></i>','<i class="far fa-bell icon"></i>','<i class="fas fa-arrows-alt"></i>','<i class="fas fa-battery-full"></i>','<i class="far fa-calendar"></i>','<i class="fas fa-bicycle"></i>','<i class="fas fa-camera"></i>','<i class="fas fa-clock"></i>','<i class="fas fa-football-ball"></i>'];
+    firstChoice = "";
+    secondChoice = "";
+    firstChoiceClasses = "";
+    secondChoiceClasses = "";
+    choiceCount = 0;
+    attempts = 0;
+    correctMatch = 0;
     
     //Create memory board
     const fragment = document.createDocumentFragment();
@@ -84,3 +91,9 @@ grid.addEventListener("click", function(e){
 
 loadGame();
 
+const reset = document.querySelector('.reset');
+reset.addEventListener("click", function(e){
+    grid.innerHTML = "";
+    loadGame();
+    attemptCount.textContent = 0;
+})
