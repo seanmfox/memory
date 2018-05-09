@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 h1 {
     text-align: center;
 }
@@ -59,32 +63,53 @@ li {
     background-color: green;
 }
 
-@media screen and (min-width: 410px) {
+.congrats {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    background-color: white;
+    text-align: center;
+}
+
+.win {
+    display: block;
+}
+
+@media screen and (min-width: 420px) {
     .grid {
-        width: 400px;
+        width: 340px;
+    }
+    
+    .congrats {
+        width: 370px;
     }
     
     .card {
-        width: 180px;
-        height: 180px;
+        width: 150px;
+        height: 150px;
         margin: 10px;
     }
     
     .far, .fas {
-        font-size: 120px;
-        line-height: 180px;
+        font-size: 100px;
+        line-height: 150px;
     }
 }
 
-
-@media screen and (min-width: 610px) {
+@media screen and (min-width: 820px) {
     .grid {
-        width: 600px;
+        width: 680px;
     }
-}
-
-@media screen and (min-width: 810px) {
-    .grid {
-        width: 800px;
+    
+    .congrats {
+        width: 710px;
     }
 }
