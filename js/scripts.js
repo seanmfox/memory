@@ -1,14 +1,29 @@
-//Game load global variables
+//Global element variables
 const grid = document.querySelector('.grid');
 const timer = document.querySelector('.timer');
+const attemptCount = document.querySelector('.counter');
+const reset = document.querySelector('.reset');
+const congrats = document.querySelector('.congrats');
+const finalTime = document.querySelector('.final-time');
+const replay = document.querySelector('.replay');
+const finalStar = document.querySelector('.final-star');
+const moveCount = document.querySelector('.move-count');
+
+//Global variables
 let firstChoice = '';
 let secondChoice = '';
 let firstChoiceClasses = '';
 let secondChoiceClasses = '';
 let start = '00:00:00';
 let incrementTimer = '';
+let choiceCount = 0;
+let attempts = 0;
+let correctMatch = 0;
 
+//Load grid for game
 function loadGame() {
+    
+    //Local variables
     let shapes = ['<i class="far fa-bell icon"></i>',
         '<i class="fas fa-arrows-alt"></i>',
         '<i class="fas fa-battery-full"></i>',
@@ -63,12 +78,7 @@ function loadGame() {
     }
 }
 
-//Click event global variables
-let attemptCount = document.querySelector('.counter');
-let choiceCount = 0;
-let attempts = 0;
-let correctMatch = 0;
-
+//Click listener for cards
 grid.addEventListener("click", function(e){
     if(e.target.firstElementChild !== null && e.target.firstElementChild.classList[0] !== 'card' && 
     (secondChoiceClasses === '' || !secondChoice.parentElement.classList.contains('wrong'))) {
@@ -77,8 +87,7 @@ grid.addEventListener("click", function(e){
             firstChoice = e.target.firstElementChild;
             firstChoiceClasses = firstChoice.classList;
             firstChoiceClasses.add('chosen');
-        }
-        else if(choiceCount === 2) {
+        } else if(choiceCount === 2) {
             secondChoice = e.target.firstElementChild;
             secondChoiceClasses = secondChoice.classList;
             secondChoiceClasses.add('chosen');
@@ -119,12 +128,8 @@ function starCount(moves) {
         case 15:
             stars.innerHTML = '<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>';
             break;
-        default:
-
     }
 }
-
-
 
 //Reset game
 function gameReset(){
@@ -135,7 +140,6 @@ function gameReset(){
     stars.innerHTML = '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>';
     congrats.classList.remove('win');
 }
-const reset = document.querySelector('.reset');
 reset.addEventListener('click', gameReset);
 
 //Game win
@@ -149,11 +153,6 @@ function gameWin(){
     moveCount.textContent = attempts;
     
 }
-const congrats = document.querySelector('.congrats');
-const finalTime = document.querySelector('.final-time');
-const replay = document.querySelector('.replay');
-const finalStar = document.querySelector('.final-star');
-const moveCount = document.querySelector('.move-count');
 replay.addEventListener('click', gameReset);
 
 loadGame();
