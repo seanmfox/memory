@@ -51,6 +51,13 @@ li {
     color: white;
 }
 
+.fa-star {
+    display: inline;
+    color: black;
+    line-height: 15px;
+    font-size: 15px;
+}
+
 .chosen {
     display: inline-block;
 }
@@ -101,6 +108,11 @@ li {
     .far, .fas {
         font-size: 100px;
         line-height: 150px;
+    }
+    
+    .fa-star {
+        font-size: 15px;
+        line-height: 15px;
     }
 }
 

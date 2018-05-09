@@ -55,12 +55,12 @@ function loadGame() {
     }, 1000);
     
     //Update timer display
-    const timeFormat = function(current) {
+    function timeFormat(current) {
         let seconds = ((current % 60));
         let minutes = (Math.floor((current / 60)) - (Math.floor((current / 3600)) * 60));
         let hours = Math.floor((current / 3600));
         timer.innerHTML = hours.toString().padStart(2,'0') + ':' + minutes.toString().padStart(2,'0') + ':' + seconds.toString().padStart(2,'0');
-    };
+    }
 }
 
 //Click event global variables
@@ -84,12 +84,13 @@ grid.addEventListener("click", function(e){
             secondChoiceClasses.add('chosen');
             attempts += 1;
             attemptCount.textContent = attempts;
+            starCount(attempts);
             if(firstChoiceClasses[1] === secondChoiceClasses[1]) {
                 firstChoice.parentElement.classList.add('correct');
                 secondChoice.parentElement.classList.add('correct');
                 correctMatch += 1;
                 choiceCount = 0;
-                if (correctMatch === 1) {
+                if (correctMatch === 8) {
                     console.log("You won!");
                     gameWin();
                 }
@@ -108,28 +109,51 @@ grid.addEventListener("click", function(e){
     }
 });
 
+// Change star count
+const stars = document.querySelector('.stars');
+function starCount(moves) {
+    switch (moves) {
+        case 10:
+            stars.innerHTML = '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>';
+            break;
+        case 15:
+            stars.innerHTML = '<i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>';
+            break;
+        default:
+
+    }
+}
+
+
+
 //Reset game
-const gameReset = function(){
+function gameReset(){
     console.log('resetting');
     grid.innerHTML = '';
     loadGame();
     attemptCount.textContent = 0;
+    stars.innerHTML = '<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>';
     congrats.classList.remove('win');
-};
+}
 const reset = document.querySelector('.reset');
 reset.addEventListener('click', gameReset);
 
 //Game win
-const gameWin = function(){
+function gameWin(){
     window.setTimeout(function() {
         congrats.classList.add('win');
     }, 1000);
     window.clearInterval(incrementTimer);
     finalTime.textContent = timer.textContent;
-};
+    finalStar.innerHTML = stars.innerHTML;
+    moveCount.textContent = attempts;
+    
+}
 const congrats = document.querySelector('.congrats');
 const finalTime = document.querySelector('.final-time');
 const replay = document.querySelector('.replay');
+const finalStar = document.querySelector('.final-star');
+const moveCount = document.querySelector('.move-count');
 replay.addEventListener('click', gameReset);
 
 loadGame();
