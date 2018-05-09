@@ -1,4 +1,5 @@
-<HTML>
+<!DOCTYPE html>
+<html lang="en-US">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -6,29 +7,33 @@
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
-        <h1>Matching Game</h1>
-        <div class="menu-bar">
-            <ul class="nav-choices">
-                <li><span class="stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </span>
-                </li>
-                <li>Moves: <span class="counter">0</span></li>
-                <li>Timer <span class="timer">00:00:00</span></li>
-                <li><button class="reset">Reset</button></li>
-            </ul>
-        </div>
-        <div class="grid">
-        </div>
-        <div class="congrats">
-            <h1>Congratulations!</h1>
-            <p>You finished the game in: <span class="final-time"></span></p>
-            <p>Move Count: <span class="move-count"></span></p>
-            <p>Star Rating: <span class="final-star"></span></p>
-            <button class="replay">Play Again</button>
-        </div>
+        <header>
+            <h1>Matching Game</h1>
+            <div class="menu-bar">
+                <ul class="nav-choices">
+                    <li><span class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </span>
+                    </li>
+                    <li>Moves: <span class="counter">0</span></li>
+                    <li>Timer <span class="timer">00:00:00</span></li>
+                    <li><button class="reset">Reset</button></li>
+                </ul>
+            </div>
+        </header>
+        <main>
+            <div class="grid">
+            </div>
+            <div class="congrats">
+                <h1>Congratulations!</h1>
+                <p>You finished the game in: <span class="final-time"></span></p>
+                <p>Move Count: <span class="move-count"></span></p>
+                <p>Star Rating: <span class="final-star"></span></p>
+                <button class="replay">Play Again</button>
+            </div>
+        </main>
         <script src="js/scripts.js"></script>
     </body>
-</HTML>
+</html>
