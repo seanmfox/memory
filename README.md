@@ -2,6 +2,11 @@
 
 Test your memory to see how well you can do at matching images in a grid.
 
+# Dependencies
+
+This program has the following dependencies:
+* Font Awesome (http://fontawesome.com/) - provides icons for game
+
 # Description
 
 This game is a component of the Udacity Front-End Nanodegree Program.
